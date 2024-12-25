@@ -1,0 +1,1 @@
+export const WRAPPER_STYLE_DEFAULT = `flex flex-column gap-2 justify-content-center align-items-center h-full w-full p-0 m-0`
