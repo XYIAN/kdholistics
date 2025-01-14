@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type EventModel = {
   name: string;
   title: string;
@@ -5,4 +7,5 @@ export type EventModel = {
   url?: string;
   type: "in-person" | "online" | "other";
   id: number;
+  extraDetails?: string | ReactNode;
 };
