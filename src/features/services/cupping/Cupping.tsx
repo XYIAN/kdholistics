@@ -2,8 +2,8 @@ import React from "react";
 
 const Cupping = () => {
   return (
-    <div>
-      <h3>Cupping Section</h3>
+    <div className="flex flex-column justify-content-center align-items-center p-2">
+      <h3 className="pt-3 text-center">Cupping Section</h3>
     </div>
   );
 };
