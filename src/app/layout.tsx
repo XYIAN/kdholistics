@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "Modern Health for Humans", // Meta description
 
   openGraph: {
-    title: "Holistic Kas",
+    title: "HolisticKas",
     description: "Modern Health for Humans",
     url: "https://holistickas.com",
     siteName: "Holistic Kas",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image", // This ensures a large preview on Twitter
-    title: "Holistic Kas",
+    title: "Holistic-Kas",
     description: "Modern Health for Humans",
     images: [
       "https://github.com/XYIANSoftware/images/blob/main/client/kdh/kd2.png?raw=true",
