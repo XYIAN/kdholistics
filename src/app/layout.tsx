@@ -18,8 +18,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KD Holistic Health",
-  description: "Modern health care for humans",
+  title: "Holistic Kas", // The title shown in the browser tab
+  description: "Modern Health for Humans", // Meta description
+
+  openGraph: {
+    title: "Holistic Kas",
+    description: "Modern Health for Humans",
+    url: "https://holistickas.com",
+    siteName: "Holistic Kas",
+    images: [
+      {
+        url: "https://github.com/XYIANSoftware/images/blob/main/client/kdh/kd2.png?raw=true", // Replace with your actual image URL
+        width: 1200, // Recommended OG image size
+        height: 630,
+        alt: "Preview of Holistic Kas",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image", // This ensures a large preview on Twitter
+    title: "Holistic Kas",
+    description: "Modern Health for Humans",
+    images: [
+      "https://github.com/XYIANSoftware/images/blob/main/client/kdh/kd2.png?raw=true",
+    ], // Same Open Graph image
+  },
 };
 
 export default function RootLayout({
