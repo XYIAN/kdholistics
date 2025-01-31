@@ -40,7 +40,11 @@ const EventItem = ({ event }: EventItemProps) => {
       footer={footerByType}
       className=""
     >
+      <h4>{name}</h4>
       <p>{description}</p>
+      <a href={url} className="underline bold cursor-pointer">
+        Book now
+      </a>
     </Card>
   );
 };
