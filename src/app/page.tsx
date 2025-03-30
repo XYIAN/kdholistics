@@ -4,6 +4,7 @@ import Hero from "@/components/common/Hero";
 import HeroImage from "../../public/images/lotus_grey.png";
 import EmailSignup from "@/features/home/EmailSignup";
 import MoonCirclesPreview from "@/features/home/MoonCirclesPreview";
+import MoonCircleScrollPreview from "@/features/home/MoonCircleScrollPreview";
 export default function Home() {
   return (
     <div>
@@ -18,6 +19,7 @@ export default function Home() {
       />
       <EmailSignup />
       <MoonCirclesPreview />
+      <MoonCircleScrollPreview />
     </div>
   );
 }

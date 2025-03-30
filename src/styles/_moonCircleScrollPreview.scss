@@ -1,0 +1,28 @@
+.moon-scroll-panel {
+  background: linear-gradient(to bottom right, #f8f4ff, #ebe4ff);
+  padding: 3rem 1rem;
+}
+
+.moon-scroll-items {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  min-width: 100%;
+}
+
+.moon-phase-card {
+  flex: 0 0 auto;
+  width: 16rem;
+  transition: transform 0.3s ease;
+}
+
+.moon-phase-card-inner {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(120, 80, 150, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(120, 80, 150, 0.2);
+  }
+}
