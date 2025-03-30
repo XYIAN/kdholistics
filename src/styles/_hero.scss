@@ -1,16 +1,23 @@
 .hero-panel {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #f8f4f1, #fff);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4rem 1rem;
+  background: rgba(0, 0, 0, 0.4); // semi-transparent black background
+  backdrop-filter: blur(4px); // optional: blur effect for enhanced visual depth
+  animation: fadeIn 1s ease-in-out;
+  transition: background 0.3s ease;
 }
 
-.hero-image {
-  box-shadow: 0 0 20px rgba(120, 80, 150, 0.3);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

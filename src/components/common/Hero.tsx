@@ -1,9 +1,11 @@
 "use client";
 
+import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { motion } from "framer-motion";
 import { Image } from "primereact/image";
 import "@/styles/_hero.scss";
+
 type HeroProps = {
   title: string;
   description: string;
@@ -24,34 +26,42 @@ const Hero = ({
   imageAlt = "Hero Image",
 }: HeroProps) => {
   return (
-    <section className="hero-panel p-4 md:p-6">
+    <section className="hero-panel flex align-items-center justify-content-center p-3">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-column align-items-center text-center gap-4"
+        className="w-full max-w-screen-lg"
       >
-        <h1 className="text-3xl md:text-5xl font-bold">{title}</h1>
-        <p className="text-lg md:text-xl max-w-30rem">{description}</p>
+        <Card className="text-center p-4 surface-card shadow-2 border-round-lg">
+          <div className="flex flex-column align-items-center gap-4">
+            <h1 className="text-3xl md:text-5xl font-bold line-height-3">
+              {title}
+            </h1>
+            <p className="text-lg md:text-xl max-w-30rem line-height-3">
+              {description}
+            </p>
 
-        {ctaLabel && (
-          <Button
-            label={ctaLabel}
-            icon={ctaIcon}
-            className="p-button-rounded p-button-lg p-button-outlined"
-            onClick={onCtaClick}
-          />
-        )}
+            {ctaLabel && (
+              <Button
+                label={ctaLabel}
+                icon={ctaIcon}
+                className="p-button-rounded p-button-lg p-button-outlined"
+                onClick={onCtaClick}
+              />
+            )}
 
-        {imageSrc && (
-          <div className="hero-image border-circle overflow-hidden mt-4">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              className="w-10rem h-10rem md:w-14rem md:h-14rem object-cover"
-            />
+            {imageSrc && (
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                className="hero-image border-circle"
+                width="250"
+                preview
+              />
+            )}
           </div>
-        )}
+        </Card>
       </motion.div>
     </section>
   );
