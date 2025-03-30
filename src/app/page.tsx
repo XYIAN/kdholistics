@@ -2,6 +2,7 @@
 
 import Hero from "@/components/common/Hero";
 import HeroImage from "../../public/images/lotus_grey.png";
+import EmailSignup from "@/features/home/EmailSignup";
 export default function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ export default function Home() {
         imageAlt="Kas Profile"
         onCtaClick={() => console.log("CTA clicked")}
       />
+      <EmailSignup />
     </div>
   );
 }

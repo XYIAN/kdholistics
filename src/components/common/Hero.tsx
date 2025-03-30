@@ -55,7 +55,7 @@ const Hero = ({
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                className="hero-image border-circle"
+                className="hero-image border-circle shadow-4"
                 width="250"
                 preview
               />
