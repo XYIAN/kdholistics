@@ -4,7 +4,7 @@ import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { motion } from "framer-motion";
 import { FaMoon } from "react-icons/fa";
-import "@/styles/_moonCircles.scss";
+import "@/styles/_moonCirclesPreview.scss";
 
 const MoonCirclesPreview = () => {
   return (

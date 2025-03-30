@@ -1,0 +1,46 @@
+.moon-circles-panel {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f3f0ff, #e0d8f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.moon-circles-wrapper {
+  width: 100%;
+  max-width: 700px;
+}
+
+.p-card-moon {
+  padding: 2.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(120, 80, 150, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 36px rgba(120, 80, 150, 0.3);
+  }
+}
+
+.animated-moon {
+  font-size: 3rem;
+  color: #a678d6;
+  animation: floatGlow 4s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 5px #cbb1f9);
+  }
+  100% {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 0 15px #a678d6);
+  }
+}
