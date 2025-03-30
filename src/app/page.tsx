@@ -1,14 +1,19 @@
 "use client";
-import KDHBanner from "@/components/common/KDHBanner";
+
+import Hero from "@/components/common/Hero";
 import { WRAPPER_STYLE_DEFAULT } from "@/constants/WRAPPER_STYLE_DEFAULT";
 
 export default function Home() {
   return (
     <div className={WRAPPER_STYLE_DEFAULT}>
-      <KDHBanner
-        title="KD's Holistic Health"
-        imgSrc="https://github.com/XYIANSoftware/images/blob/main/client/kdh/kd1.png?raw=true"
-        description="Empowering Mind, Body, and Soul – Your Journey to Wholeness Starts Here!"
+      <Hero
+        title="Welcome to Holistic Kas"
+        description="A space for personal and spiritual growth through holistic healing, education, and community."
+        ctaLabel="Join the Journey"
+        ctaIcon="pi pi-heart"
+        imageSrc="../../public/images/lotus_grey.png"
+        imageAlt="Kas Profile"
+        onCtaClick={() => console.log("CTA clicked")}
       />
     </div>
   );

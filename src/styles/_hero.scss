@@ -1,0 +1,16 @@
+.hero-panel {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8f4f1, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  box-shadow: 0 0 20px rgba(120, 80, 150, 0.3);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

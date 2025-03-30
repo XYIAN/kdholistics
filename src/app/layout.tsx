@@ -5,6 +5,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 import "../styles/commonStyles.scss";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 import Providers from "@/context";
 
 const geistSans = Geist({
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+//n2mn9v9co0Fp9YY4
 export const metadata: Metadata = {
   title: "Holistic Kas", // The title shown in the browser tab
   description: "Modern Health for Humans", // Meta description
