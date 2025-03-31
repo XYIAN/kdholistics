@@ -1,0 +1,25 @@
+.home-container {
+  /* Enable smooth scrolling for internal anchor links */
+  scroll-behavior: smooth;
+
+  /* Animated background: a shifting, gentle gradient */
+  background: linear-gradient(-45deg, #e6a1df, #f5def7, #d9bad9, #cf80d4);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Keyframes for the animated gradient background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
