@@ -1,10 +1,11 @@
 "use client";
+import AboutPage from "@/features/about/AboutPage";
 import React from "react";
 
 const About = () => {
   return (
     <div>
-      <h1>About KDH</h1>
+      <AboutPage />
     </div>
   );
 };

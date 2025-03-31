@@ -58,6 +58,7 @@ const Hero = ({
                 className="hero-image border-circle shadow-4"
                 width="250"
                 preview
+                imageClassName="border-circle"
               />
             )}
           </div>

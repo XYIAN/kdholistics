@@ -1,7 +1,7 @@
 "use client";
 
 import Hero from "@/components/common/Hero";
-import HeroImage from "../../public/images/lotus_grey.png";
+import HeroImage from "../../public/images/2.png";
 import EmailSignup from "@/features/home/EmailSignup";
 import MoonCirclesPreview from "@/features/home/MoonCirclesPreview";
 import MoonCircleScrollPreview from "@/features/home/MoonCircleScrollPreview";
