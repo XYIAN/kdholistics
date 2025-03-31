@@ -17,6 +17,8 @@ export default function Home() {
 
   return (
     <div className="home-container">
+      {/* Animated background layer */}
+      <div className="animated-background"></div>
       <Hero
         title="Welcome to Holistic Kas"
         description="A space for personal and spiritual growth through holistic healing, education, and community."
@@ -24,7 +26,7 @@ export default function Home() {
         ctaIcon="pi pi-heart"
         imageSrc={HeroImage.src}
         imageAlt="Kas Profile"
-        onCtaClick={() => handleNavigateClick("/social")}
+        onCtaClick={() => handleNavigateClick("social")}
       />
       <EmailSignup />
       <MoonCirclesPreview />
