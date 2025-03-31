@@ -1,44 +1,71 @@
-.email-signup-panel {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1rem;
-  //background: linear-gradient(to bottom right, #faf5ff, #f3eaff);
-}
-
-.email-signup-wrapper {
-  width: 100%;
-  max-width: 700px;
-}
-
-.p-card-email {
-  padding: 2.5rem;
+.email-signup-section {
+  margin: 4rem auto;
+  max-width: 720px;
+  padding: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 20, 50, 0.5),
+    rgba(20, 10, 40, 0.5)
+  );
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 30px rgba(120, 80, 150, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
 
-  &:hover {
-    transform: scale(1.01);
-    box-shadow: 0 12px 40px rgba(120, 80, 150, 0.25);
-  }
+.email-signup-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.email-signup-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #cfa9ff;
+  animation: textPulse 4s ease-in-out infinite;
+}
+
+.email-signup-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #e0d0ff;
+}
+
+.email-signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .email-input {
-  min-width: 260px;
+  padding: 0.75rem 1rem;
   width: 100%;
+  max-width: 400px;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
-.p-button-glow {
-  background: linear-gradient(to right, #bd8fee87, #8d44ada4);
-  color: #fff;
-  border: none;
-  box-shadow: 0 0 10px rgba(175, 109, 255, 0.341);
-  transition: all 0.8s ease;
+.email-signup-button {
+  padding: 0.75rem 1.5rem;
+}
 
-  &:hover {
-    box-shadow: 0 0 20px rgba(174, 109, 255, 0.8);
-    transform: scale(1.05);
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+/* Pulsing text animation for the title */
+@keyframes textPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #cfa9ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #cfa9ff;
   }
 }
