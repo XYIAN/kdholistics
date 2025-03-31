@@ -35,3 +35,44 @@
     opacity: 0.8;
   }
 }
+/* Hero section styling */
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #cfa9ff;
+  animation: textPulse 4s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #e0d0ff;
+}
+
+/* Fade and pulse animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #cfa9ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #cfa9ff;
+  }
+}
