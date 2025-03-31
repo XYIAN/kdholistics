@@ -1,12 +1,5 @@
-"use client";
-import React from "react";
+import EventsPage from "@/features/events/EventsPage";
 
-const Events = () => {
-  return (
-    <div>
-      <h1>KDH Events</h1>
-    </div>
-  );
-};
-
-export default Events;
+export default function EventsRoutePage() {
+  return <EventsPage />;
+}

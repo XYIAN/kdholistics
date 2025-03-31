@@ -9,3 +9,16 @@ export type EventModel = {
   id: number;
   extraDetails?: string | ReactNode;
 };
+
+export interface EventItem {
+  eventId: string;
+  eventName: string;
+  eventDescription: string;
+  eventSlug: string; // for linking to detail page
+  eventIcon?: ReactNode;
+  linkToJoin?: string;
+  date?: string;
+  time?: string;
+  location?: string;
+  isUpcoming?: boolean;
+}
