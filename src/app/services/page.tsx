@@ -1,10 +1,11 @@
 "use client";
+import { ServicesPage } from "@/features";
 import React from "react";
 
 const Services = () => {
   return (
     <div>
-      <h1>KDH Services</h1>
+      <ServicesPage />
     </div>
   );
 };
