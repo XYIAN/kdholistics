@@ -1,0 +1,118 @@
+.closing-ritual-section {
+  position: relative;
+  margin: 4rem auto;
+  max-width: 720px;
+  padding: 2.5rem;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 20, 50, 0.6),
+    rgba(20, 10, 40, 0.6)
+  );
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.closing-ritual-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Rotating decorative element for accent */
+.closing-ritual-section::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 100, 0.3),
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: rotateDecor 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateDecor {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #cfa9ff;
+  animation: textPulse 4s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #cfa9ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #cfa9ff;
+  }
+}
+
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #e0d0ff;
+}
+
+/* Ritual steps with slide-in and subtle fade effect */
+.ritual-steps {
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.ritual-step {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: #f3ecff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease-in-out both;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.closing-note {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #d0b8ff;
+  animation: floatText 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}

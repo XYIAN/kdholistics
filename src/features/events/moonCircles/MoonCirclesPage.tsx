@@ -5,6 +5,12 @@ import "@/styles/_moonCirclesPage.scss";
 import BackIconButton from "./BackToEvents";
 import CeremonyDetails from "./CeremonyDetails";
 import MoonHero from "./MoonHero";
+import OpeningSection from "./OpeningSection";
+import EnergyCheck from "./EnergyCheck";
+import JournalingReflection from "./JournalingReflection";
+import CommunitySharing from "./CommunitySharing";
+import ClosingRitual from "./ClosingRitual";
+import PostCircleEngagement from "./PostCircleEngagement";
 
 export const MoonCirclesPage = () => {
   return (
@@ -18,6 +24,12 @@ export const MoonCirclesPage = () => {
       >
         <MoonHero />
         <CeremonyDetails />
+        <OpeningSection />
+        <EnergyCheck />
+        <JournalingReflection />
+        <CommunitySharing />
+        <ClosingRitual />
+        <PostCircleEngagement />
       </motion.div>
     </section>
   );

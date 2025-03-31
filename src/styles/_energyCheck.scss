@@ -1,0 +1,115 @@
+.energy-check-section {
+  position: relative;
+  margin: 4rem auto;
+  max-width: 720px;
+  padding: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 20, 50, 0.6),
+    rgba(20, 10, 40, 0.6)
+  );
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.energy-check-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Rotating border effect */
+.energy-check-section::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  border: 2px solid rgba(200, 150, 255, 0.5);
+  border-radius: inherit;
+  animation: rotateBorder 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Text pulse for title */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #cfa9ff;
+  animation: textPulse 4s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #cfa9ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #cfa9ff;
+  }
+}
+
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #e0d0ff;
+}
+
+/* Floating effect for list items */
+.checkin-questions {
+  list-style: disc;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+  font-size: 1.1rem;
+  color: #f3ecff;
+  text-align: left;
+  max-width: 500px;
+  animation: fadeInUp 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+.checkin-questions li {
+  margin-bottom: 0.75rem;
+}
+
+/* Floating effect for optional text */
+.optional-text {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #d0b8ff;
+  animation: floatText 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}

@@ -1,0 +1,118 @@
+.journaling-reflection-section {
+  position: relative;
+  margin: 4rem auto;
+  max-width: 720px;
+  padding: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 20, 50, 0.5),
+    rgba(20, 10, 40, 0.5)
+  );
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journaling-reflection-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Decorative floating circle background */
+.journaling-reflection-section::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle,
+    rgba(230, 140, 255, 0.3),
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: floatCircle 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes floatCircle {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-10px, -10px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #cfa9ff;
+  animation: textPulse 4s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #cfa9ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #cfa9ff;
+  }
+}
+
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #e0d0ff;
+}
+
+.reflection-prompts {
+  list-style: disc;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+  font-size: 1.1rem;
+  color: #f3ecff;
+  text-align: left;
+  max-width: 500px;
+}
+
+.reflection-prompts li {
+  margin-bottom: 0.75rem;
+  animation: fadeInUp 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+.journaling-instruction {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #d0b8ff;
+  animation: floatText 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
