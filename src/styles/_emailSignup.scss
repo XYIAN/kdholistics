@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 1rem;
-  background: linear-gradient(to bottom right, #faf5ff, #f3eaff);
+  //background: linear-gradient(to bottom right, #faf5ff, #f3eaff);
 }
 
 .email-signup-wrapper {
@@ -31,11 +31,11 @@
 }
 
 .p-button-glow {
-  background: linear-gradient(to right, #a678d6, #8e44ad);
+  background: linear-gradient(to right, #bd8fee87, #8d44ada4);
   color: #fff;
   border: none;
-  box-shadow: 0 0 10px rgba(174, 109, 255, 0.5);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(175, 109, 255, 0.341);
+  transition: all 0.8s ease;
 
   &:hover {
     box-shadow: 0 0 20px rgba(174, 109, 255, 0.8);
