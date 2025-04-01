@@ -3,7 +3,25 @@
   // width:100%;
 }
 body {
-  background-color: rgba(144, 47, 213, 0.373);
+  /* Enable smooth scrolling for internal anchor links */
+  scroll-behavior: smooth;
+  /* Animated background: a shifting, gentle gradient */
+  background: linear-gradient(-45deg, #ab67c4a6, #f5def7, #d57eedad, #efd6f1);
+  background-size: 400% 400%;
+  animation: gradientBG 4s ease infinite;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+/* Keyframes for the animated gradient background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
