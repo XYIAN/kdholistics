@@ -25,7 +25,7 @@ const EventsPage = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: theme.animations.transition.slow,
+        duration: 0.6,
         ease: "easeOut",
       },
     },

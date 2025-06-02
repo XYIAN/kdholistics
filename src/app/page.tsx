@@ -9,22 +9,45 @@ import { Card } from "primereact/card";
 // import MoonCirclesPreview from "@/features/home/MoonCirclesPreview";
 // import MoonCircleScrollPreview from "@/features/home/MoonCircleScrollPreview";
 import "@/styles/_homePage.scss";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { theme, commonStyles } from "@/styles/theme";
 
 const CALENDLY_URL = "http://calendly.com/holistickas";
 
 export default function Home() {
-  // const router = useRouter();
-
-  // const handleNavigateClick = (to: string) => {
-  //   router.push(`/${to}`);
-  // };
+  const router = useRouter();
 
   const handleSchedule = () => {
     window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
   };
+
+  const services = [
+    {
+      title: "Holistic Healing",
+      description: "Comprehensive wellness approaches for mind-body balance",
+      icon: "pi pi-heart-fill",
+      path: "holistic-healing",
+    },
+    {
+      title: "Energy Work",
+      description: "Reiki and energy healing sessions",
+      icon: "pi pi-sun",
+      path: "energy-work",
+    },
+    {
+      title: "Moon Circles",
+      description: "Sacred gatherings for spiritual growth and connection",
+      icon: "pi pi-moon",
+      path: "mooncircles",
+    },
+    {
+      title: "Wellness Coaching",
+      description: "Personalized guidance for optimal health",
+      icon: "pi pi-users",
+      path: "wellness-coaching",
+    },
+  ];
 
   return (
     <main className="home-container">
@@ -37,8 +60,8 @@ export default function Home() {
         >
           <div className="relative mb-8">
             <Image
-              src="/images/lotus_light.png"
-              alt="Holistic Healing"
+              src="/images/hk-icon.png"
+              alt="KD Holistics Icon"
               width={200}
               height={200}
               className="hero-image"
@@ -71,24 +94,7 @@ export default function Home() {
         >
           <h2>Our Services</h2>
           <div className="service-grid">
-            {[
-              {
-                title: "Holistic Healing",
-                description:
-                  "Comprehensive wellness approaches for mind-body balance",
-                icon: "pi pi-heart-fill",
-              },
-              {
-                title: "Energy Work",
-                description: "Reiki and energy healing sessions",
-                icon: "pi pi-sun",
-              },
-              {
-                title: "Wellness Coaching",
-                description: "Personalized guidance for optimal health",
-                icon: "pi pi-users",
-              },
-            ].map((service, index) => (
+            {services.map((service, index) => (
               <Card key={index} className="service-card">
                 <div className="service-icon">
                   <i className={service.icon}></i>
@@ -99,6 +105,7 @@ export default function Home() {
                   label="Learn More"
                   text
                   className="mt-3"
+                  onClick={() => router.push(`/services/${service.path}`)}
                   style={{
                     color: theme.colors.primary.text,
                     fontSize: theme.typography.fontSizes.sm,
@@ -127,6 +134,7 @@ export default function Home() {
             label="Read More"
             outlined
             className="mt-4"
+            onClick={() => router.push("/about")}
             style={{
               ...commonStyles.buttonBase,
               background: "transparent",
@@ -149,6 +157,7 @@ export default function Home() {
           <Button
             label="Contact Us"
             className="mt-4"
+            onClick={() => router.push("/contact")}
             style={{
               ...commonStyles.buttonBase,
               background: theme.colors.gradients.button,

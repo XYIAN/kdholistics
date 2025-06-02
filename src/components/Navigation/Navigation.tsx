@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
+import { Image } from "primereact/image";
 import { classNames } from "primereact/utils";
 import styles from "./Navigation.module.css";
 
@@ -36,17 +37,17 @@ const Navigation = () => {
 
   const NavLinks = () => (
     <>
-      {navItems.map((item) => (
-        <button
-          key={item.path}
-          onClick={() => handleNavClick(item.path)}
-          className={classNames(styles.navLink, {
-            [styles.active]: pathname === item.path,
-          })}
-        >
-          {item.label}
-        </button>
-      ))}
+      {navItems
+        .filter((item) => item.path !== pathname)
+        .map((item) => (
+          <button
+            key={item.path}
+            onClick={() => handleNavClick(item.path)}
+            className={styles.navLink}
+          >
+            {item.label}
+          </button>
+        ))}
     </>
   );
 
@@ -77,17 +78,40 @@ const Navigation = () => {
           showCloseIcon={false}
           modal={true}
         >
-          <div className={styles.sidebarHeader}>
-            <Button
-              icon="pi pi-times"
-              onClick={() => setShowSidebar(false)}
-              text
-              rounded
-              className={styles.closeButton}
+          <div className={styles.sidebarBackground}>
+            <Image
+              src="/images/hk-bg-lg2.png"
+              alt="Sidebar Background"
+              width="100%"
+              height="100%"
+              imageClassName={styles.backgroundImage}
             />
           </div>
+          <div className={styles.sidebarOverlay} />
+
+          <div className={styles.sidebarHeader}>
+            <div className={styles.headerContent}>
+              <div
+                className={styles.headerTitle}
+                onClick={() => handleNavClick("/")}
+              >
+                <h1>KD Holistics</h1>
+                <p>Nurturing Mind, Body, and Spirit</p>
+              </div>
+              <Button
+                icon="pi pi-times"
+                onClick={() => setShowSidebar(false)}
+                text
+                rounded
+                className={styles.closeButton}
+              />
+            </div>
+          </div>
+
           <div className={styles.sidebarContent}>
-            <NavLinks />
+            <div className={styles.sidebarLinks}>
+              <NavLinks />
+            </div>
           </div>
         </Sidebar>
       </div>

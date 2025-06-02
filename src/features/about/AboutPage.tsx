@@ -64,8 +64,8 @@ const AboutPage = () => {
           <Card className="profile-card">
             <div className="profile-image-wrapper">
               <Image
-                src="/images/2.png"
-                alt="Kas Profile"
+                src="/images/hk-bg-lg.png"
+                alt="KD Holistics Background"
                 width={300}
                 height={300}
                 className="profile-image"
