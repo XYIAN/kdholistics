@@ -1,0 +1,152 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logo:hover {
+  color: var(--primary-color);
+}
+
+.desktopMenu {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.navLink:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after,
+.navLink.active:after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.menuButton {
+  display: none !important;
+}
+
+.sidebar {
+  width: 100vw !important;
+  max-width: 400px !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.closeButton {
+  font-size: 1.5rem !important;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.sidebarContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.sidebarContent .navLink {
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.sidebarContent .navLink:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebarContent .navLink.active {
+  background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+@media (max-width: 768px) {
+  .desktopMenu {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex !important;
+  }
+
+  .sidebar {
+    width: 100vw !important;
+  }
+
+  .sidebarContent {
+    margin-top: 2rem;
+  }
+
+  .sidebarContent .navLink {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+}

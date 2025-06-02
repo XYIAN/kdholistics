@@ -1,45 +1,53 @@
 "use client";
 
-import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { motion } from "framer-motion";
-import { FaMoon } from "react-icons/fa";
-import "@/styles/_moonCirclesPreview.scss";
+import "@/styles/_moonCircles.scss";
+import { theme, commonStyles } from "@/styles/theme";
 
 const MoonCirclesPreview = () => {
   return (
-    <section className="moon-circles-panel">
+    <section className="moon-circles-preview">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="moon-circles-wrapper"
       >
-        <Card className="p-card-moon text-center shadow-6">
-          <div className="animated-moon">
-            <FaMoon />
-          </div>
+        <h2>Upcoming Moon Circle</h2>
+        <p>
+          Join us for a night of lunar connection, intention setting, and
+          healing under the full moon.
+        </p>
 
-          <h2 className="text-2xl md:text-4xl font-bold mb-2">
-            Upcoming Moon Circle
-          </h2>
-          <p className="text-base md:text-lg mb-4">
-            Join us for a night of lunar connection, intention setting, and
-            healing under the full moon.
-          </p>
+        <div className="date-badge">
+          <i className="pi pi-moon"></i>
+          <span>Full Moon in Scorpio · April 23, 2025</span>
+        </div>
 
-          <div className="text-sm mb-3">
-            🌕 Full Moon in Scorpio · April 23, 2025
-          </div>
-
+        <div className="flex flex-column gap-3">
           <Button
             label="View Details"
             icon="pi pi-calendar"
-            className="p-button-rounded p-button-lg p-button-secondary"
-            onClick={() => console.log("Moon Circle clicked")}
+            className="p-button-lg"
+            style={{
+              ...commonStyles.buttonBase,
+              padding: theme.components.button.padding.large,
+              fontSize: theme.components.button.fontSize.large,
+            }}
           />
-        </Card>
+          <Button
+            label="Save Your Spot"
+            icon="pi pi-heart"
+            className="p-button-lg"
+            style={{
+              ...commonStyles.buttonBase,
+              background: "transparent",
+              border: `2px solid ${theme.colors.primary.main}`,
+              color: theme.colors.primary.text,
+            }}
+          />
+        </div>
       </motion.div>
     </section>
   );

@@ -1,37 +1,106 @@
 .moon-scroll-panel {
-  background: linear-gradient(to bottom right, #b395e83a, #9f3ac71e);
+  background: linear-gradient(
+    135deg,
+    rgba(179, 149, 232, 0.15) 0%,
+    rgba(159, 58, 199, 0.08) 100%
+  );
   padding: 5rem 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(159, 58, 199, 0.2),
+      transparent
+    );
+  }
 }
 
 .moon-scroll-items {
   display: flex;
-  //gap: 1rem;
-  padding-bottom: 1rem;
+  padding: 2rem 0;
   min-width: 100%;
+  gap: 0.5rem;
 }
 
 .moon-phase-card {
   flex: 0 0 auto;
-  width: 16rem;
-  transition: transform 0.3s ease;
-  // margin: 0 2rem 0 0;
-}
-.moon-scroll-items > :first-child {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  width: 20rem;
+  padding: 0 1rem;
+
+  &:first-child {
+    margin-left: 2rem;
+  }
+
+  &:last-child {
+    margin-right: 2rem;
+  }
 }
 
-/* Other items: only right padding 2rem */
-.moon-scroll-items > *:not(:first-child) {
-  padding-right: 2rem;
-}
 .moon-phase-card-inner {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(120, 80, 150, 0.1);
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 4px 20px rgba(120, 80, 150, 0.1) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+
+  .phase-content {
+    padding: 2rem;
+  }
+
+  .phase-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, #9b6dff 0%, #6b4db3 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(120, 80, 150, 0.2);
+    box-shadow: 0 8px 32px rgba(120, 80, 150, 0.2) !important;
+  }
+}
+
+// Custom scrollbar styling
+.custom-scroll {
+  .p-scrollpanel-wrapper {
+    border-radius: 0 !important;
+  }
+
+  .p-scrollpanel-bar {
+    background: rgba(155, 109, 255, 0.4) !important;
+    border-radius: 10px !important;
+
+    &:hover {
+      background: rgba(155, 109, 255, 0.6) !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .moon-scroll-panel {
+    padding: 4rem 0;
+  }
+
+  .moon-phase-card {
+    width: 18rem;
+  }
+
+  .moon-phase-card-inner .phase-content {
+    padding: 1.5rem;
   }
 }

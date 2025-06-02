@@ -1,71 +1,96 @@
-.email-signup-section {
-  margin: 4rem auto;
-  max-width: 720px;
-  padding: 2rem;
-  background: linear-gradient(
-    145deg,
-    rgba(30, 20, 50, 0.5),
-    rgba(20, 10, 40, 0.5)
-  );
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
+@import "./theme.scss";
+
+.email-signup {
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  background: var(--gradient-card);
+  border-radius: var(--border-radius-lg);
+  margin: var(--spacing-xl) auto;
+  max-width: 800px;
+  box-shadow: var(--shadow-default);
   text-align: center;
-  color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
 
-.email-signup-section:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-}
-
-.email-signup-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #cfa9ff;
-  animation: textPulse 4s ease-in-out infinite;
-}
-
-.email-signup-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #e0d0ff;
-}
-
-.email-signup-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.email-input {
-  padding: 0.75rem 1rem;
-  width: 100%;
-  max-width: 400px;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-}
-
-.email-signup-button {
-  padding: 0.75rem 1.5rem;
-}
-
-.error-message {
-  color: #ff6b6b;
-  font-size: 0.9rem;
-}
-
-/* Pulsing text animation for the title */
-@keyframes textPulse {
-  0%,
-  100% {
-    text-shadow: 0 0 5px #cfa9ff;
+  h2 {
+    color: var(--color-primary-text);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
   }
-  50% {
-    text-shadow: 0 0 15px #cfa9ff;
+
+  p {
+    color: var(--color-primary-text-dark);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-group {
+    display: flex;
+    gap: var(--spacing-md);
+    max-width: 500px;
+    margin: 0 auto;
+
+    @media (max-width: var(--breakpoint-md)) {
+      flex-direction: column;
+    }
+
+    .p-inputtext {
+      flex: 1;
+      background: white;
+      border: 2px solid var(--color-primary-light);
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-md);
+      font-size: var(--font-size-sm);
+      transition: var(--transition-normal);
+
+      &:focus {
+        border-color: var(--color-primary-main);
+        box-shadow: 0 0 0 2px var(--color-sparkle-light);
+      }
+    }
+
+    .p-button {
+      background: var(--gradient-button);
+      border: none;
+      padding: var(--button-padding-default);
+      font-size: var(--button-font-size-default);
+      transition: var(--transition-normal);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-button);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .success-message {
+    color: var(--color-primary-text);
+    font-size: var(--font-size-md);
+    margin-top: var(--spacing-lg);
+    animation: fadeIn 0.5s ease;
+  }
+
+  .error-message {
+    color: #ef4444;
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-sm);
+    animation: fadeIn 0.5s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -5,6 +5,7 @@ import { Button } from "primereact/button";
 import { motion } from "framer-motion";
 import { Image } from "primereact/image";
 import "@/styles/_hero.scss";
+import { theme, commonStyles } from "@/styles/theme";
 
 type HeroProps = {
   title: string;
@@ -26,21 +27,17 @@ const Hero = ({
   imageAlt = "Hero Image",
 }: HeroProps) => {
   return (
-    <section className="hero-panel flex align-items-center justify-content-center p-3">
+    <section className="hero-panel">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-full max-w-screen-lg"
       >
-        <Card className="text-center p-4 surface-card shadow-2 border-round-lg">
+        <Card className="text-center">
           <div className="flex flex-column align-items-center gap-4">
-            <h1 className="text-3xl md:text-5xl font-bold line-height-3">
-              {title}
-            </h1>
-            <p className="text-lg md:text-xl max-w-30rem line-height-3">
-              {description}
-            </p>
+            <h1>{title}</h1>
+            <p>{description}</p>
 
             {ctaLabel && (
               <Button
@@ -48,6 +45,11 @@ const Hero = ({
                 icon={ctaIcon}
                 className="p-button-rounded p-button-lg p-button-outlined"
                 onClick={onCtaClick}
+                style={{
+                  ...commonStyles.buttonBase,
+                  padding: theme.components.button.padding.large,
+                  fontSize: theme.components.button.fontSize.large,
+                }}
               />
             )}
 
@@ -55,7 +57,7 @@ const Hero = ({
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                className="hero-image border-circle shadow-4"
+                className="hero-image"
                 width="250"
                 preview
                 imageClassName="border-circle"

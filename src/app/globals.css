@@ -1,21 +1,114 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --background: #171717;
-  --foreground: #ffffff;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  color:black; 
-  background: white; 
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Global button styles */
+.p-button {
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.p-button.p-button-lg {
+  padding: 1rem 2rem !important;
+  font-size: 1.1rem !important;
+}
+
+.p-button.p-button-rounded {
+  border-radius: 2rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.p-button.p-button-text {
+  padding: 0.5rem 1rem !important;
+}
+
+.p-button.p-button-outlined {
+  padding: 0.7rem 1.75rem !important;
+}
+
+.p-button:not(.p-button-text):not(.p-button-link):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .p-button {
+    padding: 0.6rem 1.25rem !important;
+  }
+
+  .p-button.p-button-lg {
+    padding: 0.8rem 1.75rem !important;
+  }
 }

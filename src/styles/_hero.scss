@@ -1,23 +1,91 @@
+@use "./theme";
+
 .hero-panel {
-  min-height: 100vh;
-  width: 100%;
+  position: relative;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  background: var(--gradient-primary);
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1rem;
-  // background: rgba(0, 0, 0, 0.155); // semi-transparent black background
-  backdrop-filter: blur(4px); // optional: blur effect for enhanced visual depth
-  animation: fadeIn 1s ease-in-out;
-  transition: background 0.3s ease;
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  @media (max-width: var(--breakpoint-md)) {
+    padding: var(--spacing-xl) var(--spacing-md);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .p-card {
+    background: var(--gradient-card);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-default);
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+
+    &:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    h1 {
+      color: var(--color-primary-text);
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--spacing-md);
+      line-height: var(--line-height-normal);
+
+      @media (max-width: var(--breakpoint-md)) {
+        font-size: var(--font-size-lg);
+      }
+    }
+
+    p {
+      color: var(--color-primary-text-dark);
+      font-size: var(--font-size-md);
+      line-height: var(--line-height-relaxed);
+      margin-bottom: var(--spacing-lg);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media (max-width: var(--breakpoint-md)) {
+        font-size: var(--font-size-sm);
+      }
+    }
+
+    .hero-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      margin: var(--spacing-lg) auto 0;
+      box-shadow: var(--shadow-default);
+      object-fit: cover;
+    }
+
+    .p-button {
+      background: var(--gradient-button);
+      border: none;
+      padding: var(--button-padding-large);
+      font-size: var(--button-font-size-large);
+      transition: var(--transition-normal);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-button);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &.p-button-outlined {
+        background: transparent;
+        border: 2px solid var(--color-primary-main);
+        color: var(--color-primary-text);
+
+        &:hover {
+          background: var(--gradient-button);
+          color: white;
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Card } from "primereact/card";
 import "@/styles/_moonCirclesPage.scss";
 import BackIconButton from "./BackToEvents";
 import CeremonyDetails from "./CeremonyDetails";
@@ -16,21 +17,23 @@ export const MoonCirclesPage = () => {
   return (
     <section className="moon-circles-full-page">
       <BackIconButton />
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="moon-circles-hero"
-      >
-        <MoonHero />
-        <CeremonyDetails />
-        <OpeningSection />
-        <EnergyCheck />
-        <JournalingReflection />
-        <CommunitySharing />
-        <ClosingRitual />
-        <PostCircleEngagement />
-      </motion.div>
+      <Card className="moon-circles-container">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="moon-circles-content"
+        >
+          <MoonHero />
+          <CeremonyDetails />
+          <OpeningSection />
+          <EnergyCheck />
+          <JournalingReflection />
+          <CommunitySharing />
+          <ClosingRitual />
+          <PostCircleEngagement />
+        </motion.div>
+      </Card>
     </section>
   );
 };

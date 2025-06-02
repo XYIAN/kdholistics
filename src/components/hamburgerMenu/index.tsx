@@ -3,6 +3,7 @@ import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
 import React, { useState } from "react";
 import { MenuItemDisplay } from "./MenuItemDisplay";
+import styles from "./HamburgerMenu.module.css";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,36 +14,29 @@ const HamburgerMenu = () => {
   return (
     <>
       <Button
-        icon={"fa-solid fa-bars"}
-        onClick={() => openMenu()}
-        style={{
-          position: "fixed",
-          top: "2rem",
-          right: "2rem",
-          padding: "5px",
-          zIndex: 999,
-        }}
-        pt={{
-          root: {
-            style: {
-              backgroundColor: "white",
-            },
-          },
-        }}
+        icon="pi pi-bars"
+        onClick={openMenu}
+        className={styles.menuButton}
+        text
+        rounded
       />
       <Sidebar
-        //header={SideBarHeader}
         visible={isOpen}
-        onHide={() => setIsOpen(false)}
+        onHide={closeMenu}
         position="right"
-        className="flex justify-content-center align-content-center sideMenu bg-black-alpha-90"
-        closeIcon={
-          <i
-            className="fa-solid fa-xmark fa-lg cursor-pointer hover:shadow-4"
-            style={{ color: "white", zIndex: 999 }}
-          />
-        }
+        className={styles.sidebar}
+        showCloseIcon={false}
+        modal={true}
       >
+        <div className={styles.sidebarHeader}>
+          <Button
+            icon="pi pi-times"
+            onClick={closeMenu}
+            text
+            rounded
+            className={styles.closeButton}
+          />
+        </div>
         <MenuItemDisplay onClose={closeMenu} />
       </Sidebar>
     </>
