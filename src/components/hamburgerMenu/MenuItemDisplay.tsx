@@ -1,16 +1,14 @@
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Ripple } from "primereact/ripple";
 import { Button } from "primereact/button";
-import { MenuItemModel } from "@/types";
 import { MENU } from "@/constants";
-
-const BUTTON_SYLE = "p-2 font-bold w-11";
 
 interface MenuItemDisplayProps {
   onClose: () => void;
 }
+
 export const MenuItemDisplay = ({ onClose }: MenuItemDisplayProps) => {
-  const currentRoute = window.location.pathname;
+  const pathname = usePathname();
   const router = useRouter();
 
   const handleNavigateClick = (to: string) => {
@@ -18,45 +16,27 @@ export const MenuItemDisplay = ({ onClose }: MenuItemDisplayProps) => {
     onClose();
   };
 
-  function filterMenuByLabel(
-    menu: MenuItemModel[],
-    labelToRemove: string
-  ): MenuItemModel[] {
-    return menu.filter((item) => item.route !== labelToRemove.replace("/", ""));
-  }
+  const currentRoute = pathname?.slice(1) || "";
 
-  const MENU_WITHOUT_CURRENT_ROUTE: MenuItemModel[] = filterMenuByLabel(
-    MENU,
-    currentRoute
-  );
+  const menuItems = MENU.filter((item) => item.route !== currentRoute);
 
   return (
-    <div className="flex flex-column p-1 mobileMenu gap-4 justify-content-center align-content-center">
-      {MENU_WITHOUT_CURRENT_ROUTE.map((page) => {
-        return (
-          <div
-            key={page.route}
-            className="flex justify-content-center align-items-center"
+    <div className="flex flex-column p-4 gap-4 justify-content-center align-content-center">
+      {menuItems.map((page) => (
+        <div
+          key={page.route}
+          className="flex justify-content-center align-items-center"
+        >
+          <Button
+            className="w-full p-button-text p-button-lg"
+            label={page.label}
+            onClick={() => handleNavigateClick(page.route)}
+            severity={pathname === `/${page.route}` ? "secondary" : "info"}
           >
-            <Button
-              key={page.route + "-x"}
-              className={BUTTON_SYLE}
-              label={page.label}
-              onClick={() => handleNavigateClick(page.route)}
-            >
-              <Ripple
-                pt={{
-                  root: {
-                    style: {
-                      background: "rgba(0, 14, 0, .4)",
-                    },
-                  },
-                }}
-              />
-            </Button>
-          </div>
-        );
-      })}
+            <Ripple />
+          </Button>
+        </div>
+      ))}
     </div>
   );
 };

@@ -10,15 +10,20 @@ export type EventModel = {
   extraDetails?: string | ReactNode;
 };
 
+export interface Event {
+  eventId: string;
+  title: string;
+  date: string;
+  time: string;
+  description: string;
+  link: string;
+}
+
 export interface EventItem {
   eventId: string;
   eventName: string;
   eventDescription: string;
-  eventSlug: string; // for linking to detail page
-  eventIcon?: ReactNode;
+  eventIcon: string;
+  eventSlug: string;
   linkToJoin?: string;
-  date?: string;
-  time?: string;
-  location?: string;
-  isUpcoming?: boolean;
 }

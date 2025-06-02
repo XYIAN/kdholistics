@@ -1,0 +1,74 @@
+// Theme variables
+:root {
+  // Colors
+  --color-primary-light: #faf6f0;
+  --color-primary-main: #d4a373;
+  --color-primary-dark: #b08968;
+  --color-primary-text: #8b5e34;
+  --color-primary-text-dark: #6b4423;
+
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, #faf6f0 0%, #f5e6d3 100%);
+  --gradient-card: linear-gradient(135deg, #fff 0%, #fdf8f3 100%);
+  --gradient-button: linear-gradient(135deg, #d4a373 0%, #b08968 100%);
+
+  // Effects
+  --color-sparkle-light: rgba(212, 163, 115, 0.2);
+  --color-sparkle-dark: rgba(176, 137, 104, 0.15);
+  --color-card-shadow: rgba(184, 140, 89, 0.15);
+  --color-button-shadow: rgba(184, 140, 89, 0.3);
+
+  // Spacing
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  --spacing-xxl: 4rem;
+
+  // Border Radius
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+
+  // Typography
+  --font-size-xs: 0.9rem;
+  --font-size-sm: 1.1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 2.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  // Breakpoints
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  // Transitions
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.6s ease;
+
+  // Shadows
+  --shadow-default: 0 4px 20px var(--color-card-shadow);
+  --shadow-hover: 0 8px 32px var(--color-card-shadow);
+  --shadow-button: 0 4px 12px var(--color-button-shadow);
+
+  // Component Specific
+  --card-padding-default: 2rem;
+  --card-padding-mobile: 1.5rem;
+
+  --button-padding-default: 1rem 2rem;
+  --button-padding-large: 1.5rem 3rem;
+  --button-font-size-default: 1.1rem;
+  --button-font-size-large: 1.2rem;
+}

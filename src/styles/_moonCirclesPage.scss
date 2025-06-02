@@ -1,10 +1,145 @@
 .moon-circles-full-page {
+  background: linear-gradient(135deg, #f3e9ff 0%, #e6e0ff 100%);
   min-height: 100vh;
-  background: radial-gradient(circle at top, #1b1525, #0e0a16);
+  padding: 8rem 2rem 4rem;
+  position: relative;
+}
+
+.moon-circles-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 8px 32px rgba(120, 80, 150, 0.15) !important;
+  border: none !important;
+  padding: 2.5rem !important;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem !important;
+  }
+}
+
+.moon-circles-content {
+  position: relative;
+  z-index: 2;
+
+  h1,
+  h2,
+  h3 {
+    color: #4a2b7a;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 3rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  p {
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  section {
+    margin-bottom: 4rem;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Decorative elements
+.moon-phase-decoration {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.1;
+  pointer-events: none;
+
+  &.top-right {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  &.bottom-left {
+    bottom: 2rem;
+    left: 2rem;
+  }
+}
+
+// Animation keyframes
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Card styles within moon circles
+.moon-circle-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(120, 80, 150, 0.2);
+  }
+}
+
+// Back button styling
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .moon-circles-hero {

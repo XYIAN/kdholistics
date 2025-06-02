@@ -1,60 +1,102 @@
 "use client";
 
-import { Card } from "primereact/card";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
-import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
 import "@/styles/_emailSignup.scss";
+import { theme, commonStyles } from "@/styles/theme";
 
-type FormValues = {
+type FormData = {
   email: string;
 };
 
 const EmailSignup = () => {
-  const { register, handleSubmit, reset } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>();
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Email submitted:", data);
-    reset();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+
+  const onSubmit = async (data: FormData): Promise<void> => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error("Subscription failed. Please try again later.");
+      }
+      setSuccess(true);
+      reset();
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Error subscribing:", error);
+        alert(error.message);
+      } else {
+        alert("An error occurred. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="email-signup-panel">
+    <section className="email-signup">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="email-signup-wrapper"
       >
-        <Card className="p-card-email text-center shadow-5">
-          <h2 className="text-2xl md:text-4xl font-bold mb-3">
-            Stay Connected 🌙
-          </h2>
-          <p className="text-base md:text-lg mb-4">
-            Join the Holistic Kas community and receive lunar updates, rituals,
-            and exclusive content.
-          </p>
-
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-column md:flex-row gap-3 justify-content-center align-items-center"
-          >
-            <InputText
-              type="email"
-              placeholder="Enter your email"
-              {...register("email", { required: true })}
-              className="p-inputtext-lg email-input"
-            />
-            <Button
-              type="submit"
-              label="Sign Up"
-              icon="pi pi-send"
-              className="p-button-rounded p-button-lg p-button-glow"
-            />
+        <h2>Join Our Newsletter</h2>
+        <p>
+          Stay updated with the latest holistic health insights and upcoming
+          events.
+        </p>
+        {success ? (
+          <div className="success-message">
+            Thank you for subscribing! We&apos;ll be in touch soon.
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="input-group">
+              <InputText
+                type="email"
+                placeholder="Enter your email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+\.\S+$/,
+                    message: "Please enter a valid email",
+                  },
+                })}
+              />
+              <Button
+                type="submit"
+                label={loading ? "Submitting..." : "Subscribe"}
+                disabled={loading}
+                style={{
+                  ...commonStyles.buttonBase,
+                  padding: theme.components.button.padding.default,
+                  fontSize: theme.components.button.fontSize.default,
+                }}
+              />
+            </div>
+            {errors.email && (
+              <span className="error-message">{errors.email.message}</span>
+            )}
           </form>
-        </Card>
+        )}
       </motion.div>
     </section>
   );
