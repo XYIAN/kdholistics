@@ -13,13 +13,11 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { theme, commonStyles } from "@/styles/theme";
 
-const CALENDLY_URL = "http://calendly.com/holistickas";
-
 export default function Home() {
   const router = useRouter();
 
   const handleSchedule = () => {
-    window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
+    router.push("/contact");
   };
 
   const services = [

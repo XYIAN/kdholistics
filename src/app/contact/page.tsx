@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import "@/styles/_contactPage.scss";
-import { theme, commonStyles } from "@/styles/theme";
+import { theme } from "@/styles/theme";
+import Script from "next/script";
 
 const contactLinks = [
   {
@@ -66,14 +67,39 @@ const ContactPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Connect With Us</h1>
+        <h1>Schedule a Session</h1>
         <p>
-          Choose your preferred way to connect. We&apos;re here to support your
-          wellness journey.
+          Book your transformative wellness journey or connect with us through
+          various channels.
         </p>
       </motion.section>
 
-      <section className="contact-grid">
+      <motion.section
+        className="calendly-section"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <Card className="calendly-card">
+          <div
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/holistickas?hide_landing_page_details=1&hide_gdpr_banner=1"
+            style={{ minWidth: "320px", height: "700px" }}
+          />
+          <Script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          />
+        </Card>
+      </motion.section>
+
+      <motion.section
+        className="contact-grid"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         {contactLinks.map((contact, index) => (
           <motion.div
             key={contact.title}
@@ -108,35 +134,6 @@ const ContactPage = () => {
             </Card>
           </motion.div>
         ))}
-      </section>
-
-      <motion.section
-        className="contact-message"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <Card>
-          <h2>Let&apos;s Start Your Journey</h2>
-          <p>
-            Whether you&apos;re looking to begin your wellness journey or have
-            questions about our services, we&apos;re here to help. Reach out
-            through any of our channels, and we&apos;ll get back to you soon.
-          </p>
-          <Button
-            label="Schedule a Consultation"
-            icon="pi pi-calendar"
-            style={{
-              ...commonStyles.buttonBase,
-              padding: theme.components.button.padding.large,
-              fontSize: theme.components.button.fontSize.large,
-            }}
-            onClick={() =>
-              handleContactClick("http://calendly.com/holistickas")
-            }
-          />
-        </Card>
       </motion.section>
     </main>
   );

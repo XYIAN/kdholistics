@@ -1,6 +1,6 @@
 import { Event } from "@/types/events";
 
-const CALENDLY_URL = "http://calendly.com/holistickas";
+const CALENDLY_URL = "/contact";
 
 export const EVENTS_LIST: Event[] = [
   {

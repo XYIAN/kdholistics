@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
+import { useRouter } from "next/navigation";
 
 const CeremonyDetails = () => {
+  const router = useRouter();
+
   const details = [
     {
       icon: "pi pi-calendar",
@@ -27,6 +30,10 @@ const CeremonyDetails = () => {
       content: "Limited to 12 participants",
     },
   ];
+
+  const handleSchedule = () => {
+    router.push("/contact");
+  };
 
   return (
     <section className="mb-12">
@@ -54,15 +61,12 @@ const CeremonyDetails = () => {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="flex justify-center mt-8">
             <Button
               label="Reserve Your Spot"
-              icon="pi pi-heart"
-              className="p-button-rounded p-button-lg"
-              style={{
-                background: "linear-gradient(135deg, #9b4dca 0%, #6b3fa0 100%)",
-                border: "none",
-              }}
+              icon="pi pi-calendar-plus"
+              className="p-button-lg"
+              onClick={handleSchedule}
             />
           </div>
         </motion.div>

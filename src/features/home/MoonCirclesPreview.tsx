@@ -4,8 +4,15 @@ import { Button } from "primereact/button";
 import { motion } from "framer-motion";
 import "@/styles/_moonCircles.scss";
 import { theme, commonStyles } from "@/styles/theme";
+import { useRouter } from "next/navigation";
 
 const MoonCirclesPreview = () => {
+  const router = useRouter();
+
+  const handleSchedule = () => {
+    router.push("/contact");
+  };
+
   return (
     <section className="moon-circles-preview">
       <motion.div
@@ -35,6 +42,7 @@ const MoonCirclesPreview = () => {
               padding: theme.components.button.padding.large,
               fontSize: theme.components.button.fontSize.large,
             }}
+            onClick={() => router.push("/events/mooncircles")}
           />
           <Button
             label="Save Your Spot"
@@ -46,6 +54,7 @@ const MoonCirclesPreview = () => {
               border: `2px solid ${theme.colors.primary.main}`,
               color: theme.colors.primary.text,
             }}
+            onClick={handleSchedule}
           />
         </div>
       </motion.div>
