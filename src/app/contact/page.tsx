@@ -11,42 +11,42 @@ const contactLinks = [
   {
     title: "Instagram",
     icon: "pi pi-instagram",
-    description: "Follow us for daily wellness tips and updates",
+    description: "Follow Kas for daily wellness tips and updates",
     link: "https://instagram.com/holistickas",
     color: "#E1306C",
   },
   {
     title: "Etsy Shop",
     icon: "pi pi-shopping-bag",
-    description: "Browse our collection of holistic wellness products",
+    description: "Browse Kas's collection of holistic wellness products",
     link: "https://etsy.com/shop/holistickas",
     color: "#F56400",
   },
   {
     title: "Email",
     icon: "pi pi-envelope",
-    description: "Get in touch for inquiries and collaborations",
+    description: "Get in touch with Kas for inquiries and collaborations",
     link: "mailto:contact@kdholistics.com",
     color: "#4CAF50",
   },
   {
     title: "Phone",
     icon: "pi pi-phone",
-    description: "Call us for immediate assistance",
+    description: "Call Kas for immediate assistance",
     link: "tel:+1234567890",
     color: "#2196F3",
   },
   {
     title: "Facebook",
     icon: "pi pi-facebook",
-    description: "Join our wellness community",
+    description: "Join Kas's wellness community",
     link: "https://facebook.com/holistickas",
     color: "#1877F2",
   },
   {
     title: "YouTube",
     icon: "pi pi-youtube",
-    description: "Watch our wellness and meditation videos",
+    description: "Watch Kas's wellness and meditation videos",
     link: "https://youtube.com/@holistickas",
     color: "#FF0000",
   },
@@ -67,9 +67,9 @@ const ContactPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Schedule a Session</h1>
+        <h1>Schedule with Kas</h1>
         <p>
-          Book your transformative wellness journey or connect with us through
+          Book your transformative wellness journey with Kas or connect through
           various channels.
         </p>
       </motion.section>

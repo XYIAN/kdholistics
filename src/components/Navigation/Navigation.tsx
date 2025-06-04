@@ -27,7 +27,8 @@ const Navigation = () => {
     { label: "About", path: "/about" },
     { label: "Services", path: "/services" },
     { label: "Events", path: "/events" },
-    { label: "Contact", path: "/contact" },
+    { label: "Credentials", path: "/credentials" },
+    { label: "Contact Kas", path: "/contact" },
   ];
 
   const handleNavClick = (path: string) => {

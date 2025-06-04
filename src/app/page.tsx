@@ -150,10 +150,10 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Get in Touch</h2>
-          <p>Start your wellness journey today</p>
+          <h2>Connect with Kas</h2>
+          <p>Begin your wellness journey today</p>
           <Button
-            label="Contact Us"
+            label="Contact Kas"
             className="mt-4"
             onClick={() => router.push("/contact")}
             style={{
