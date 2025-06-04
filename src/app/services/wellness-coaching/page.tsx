@@ -43,8 +43,12 @@ export default function WellnessCoachingPage() {
     },
   ];
 
+  const description = `
+Wellness coaching at Holistic Kas is a collaborative journey that empowers you to achieve your optimal health and well-being. Through personalized guidance and support, we help you develop sustainable lifestyle practices that align with your unique needs and goals.
+`;
+
   return (
-    <main className="service-page">
+    <main className="service-page" style={{ background: "transparent" }}>
       <div className="bg-overlay"></div>
       <Image
         src="/images/hk-bg-lg2.png"
@@ -59,6 +63,7 @@ export default function WellnessCoachingPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        style={{ background: "transparent" }}
       >
         <div className="service-header">
           <motion.h1
@@ -84,19 +89,11 @@ export default function WellnessCoachingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Card>
-              <h2>About Wellness Coaching</h2>
-              <p>
-                Wellness coaching at KD Holistics is a collaborative journey
-                toward optimal health and well-being. We work together to
-                identify your unique needs, set meaningful goals, and create
-                actionable plans that align with your lifestyle and values.
-              </p>
-              <p>
-                Through regular sessions and ongoing support, you&apos;ll
-                develop the tools and confidence needed to make lasting positive
-                changes in your life.
-              </p>
+            <Card className="p-8 mb-8">
+              <h2 className="text-2xl font-semibold mb-6">
+                About Wellness Coaching
+              </h2>
+              <p className="text-lg leading-relaxed">{description}</p>
             </Card>
           </motion.section>
 
@@ -133,8 +130,8 @@ export default function WellnessCoachingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <Card>
-              <h2>Benefits</h2>
+            <Card className="p-8 mb-8">
+              <h2 className="text-2xl font-semibold mb-6">Benefits</h2>
               <div className="benefits-grid">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -144,8 +141,8 @@ export default function WellnessCoachingPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                   >
-                    <i className="pi pi-check-circle"></i>
-                    <span>{benefit}</span>
+                    <i className="pi pi-check-circle mr-4"></i>
+                    <span className="text-lg">{benefit}</span>
                   </motion.div>
                 ))}
               </div>

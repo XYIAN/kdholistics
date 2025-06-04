@@ -6,6 +6,9 @@
   --color-primary-dark: #b08968;
   --color-primary-text: #8b5e34;
   --color-primary-text-dark: #6b4423;
+  --text-color: var(
+    --color-primary-text-dark
+  ); // Using the same brown as header
 
   // Gradients
   --gradient-primary: linear-gradient(135deg, #faf6f0 0%, #f5e6d3 100%);

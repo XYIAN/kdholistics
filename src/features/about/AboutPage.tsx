@@ -39,16 +39,6 @@ const AboutPage = () => {
 
   return (
     <main className="about-container">
-      <div className="animated-background">
-        <Image
-          src="/images/hk-bg-lg2.png"
-          alt="Background"
-          fill
-          className="background-image"
-          priority
-        />
-      </div>
-
       <motion.section
         className="about-hero"
         initial={{ opacity: 0, y: 20 }}
@@ -73,7 +63,7 @@ const AboutPage = () => {
             <div className="profile-image-wrapper">
               <Image
                 src="/images/hk-bg-lg.png"
-                alt="KD Holistics Background"
+                alt="Holistic Kas Background"
                 width={300}
                 height={300}
                 className="profile-image"

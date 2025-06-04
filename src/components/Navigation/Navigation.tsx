@@ -65,7 +65,7 @@ const Navigation = () => {
           onClick={() => handleNavClick("/")}
           className={classNames(styles.logo, playfair.className)}
         >
-          KD Holistics
+          Holistic Kas
         </button>
 
         <div className={styles.desktopMenu}>
@@ -105,7 +105,7 @@ const Navigation = () => {
                 className={classNames(styles.headerTitle, playfair.className)}
                 onClick={() => handleNavClick("/")}
               >
-                <h1>KD Holistics</h1>
+                <h1>Holistic Kas</h1>
                 <p>Nurturing Mind, Body, and Spirit</p>
               </div>
               <Button

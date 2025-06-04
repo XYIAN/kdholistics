@@ -43,12 +43,16 @@ export default function MoonCirclesPage() {
     },
   ];
 
+  const description = `
+Moon Circles at Holistic Kas are sacred gatherings that honor the lunar cycles and their influence on our lives. These intimate ceremonies provide a space for connection, reflection, and intentional manifestation work.
+`;
+
   return (
     <main className="service-page">
       <div className="bg-overlay"></div>
       <Image
-        src="/images/hk-bg-lg2.png"
-        alt="Background"
+        src="/images/star-bg1.jpg"
+        alt="Moon Circles Background"
         fill
         className="background-image"
         priority
@@ -65,6 +69,7 @@ export default function MoonCirclesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl font-semibold mb-4"
           >
             Moon Circles
           </motion.h1>
@@ -72,6 +77,7 @@ export default function MoonCirclesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-xl"
           >
             Connect with lunar wisdom and community in sacred gathering spaces
           </motion.p>
@@ -84,20 +90,18 @@ export default function MoonCirclesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Card>
-              <h2>About Moon Circles</h2>
-              <p>
-                Moon Circles at KD Holistics are sacred gatherings that honor
-                the lunar cycles and their influence on our well-being. These
-                monthly ceremonies create a space for intention setting,
-                releasing, and collective healing in alignment with the
-                moon&apos;s phases.
-              </p>
-              <p>
-                Each circle combines meditation, ritual, sharing, and energy
-                work to create a powerful container for transformation and
-                community connection.
-              </p>
+            <Card className="p-4">
+              <div className="p-4">
+                <h2 className="text-2xl font-semibold mb-4">
+                  About Moon Circles
+                </h2>
+                <p className="mb-4 text-lg leading-relaxed">{description}</p>
+                <p className="text-lg leading-relaxed">
+                  Each circle combines meditation, ritual, sharing, and energy
+                  work to create a powerful container for transformation and
+                  community connection.
+                </p>
+              </div>
             </Card>
           </motion.section>
 
@@ -107,7 +111,9 @@ export default function MoonCirclesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <h2>Circle Elements</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-center">
+              Circle Elements
+            </h2>
             <div className="approaches-grid">
               {approaches.map((approach, index) => (
                 <motion.div
@@ -116,11 +122,13 @@ export default function MoonCirclesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                 >
-                  <Card className="approach-card">
+                  <Card className="approach-card p-4">
                     <div className="approach-content">
                       <i className={approach.icon}></i>
-                      <h3>{approach.title}</h3>
-                      <p>{approach.description}</p>
+                      <h3 className="text-xl font-semibold mb-3">
+                        {approach.title}
+                      </h3>
+                      <p className="text-base">{approach.description}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -134,21 +142,23 @@ export default function MoonCirclesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <Card>
-              <h2>Benefits</h2>
-              <div className="benefits-grid">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit}
-                    className="benefit-item"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  >
-                    <i className="pi pi-check-circle"></i>
-                    <span>{benefit}</span>
-                  </motion.div>
-                ))}
+            <Card className="p-4">
+              <div className="p-4">
+                <h2 className="text-2xl font-semibold mb-6">Benefits</h2>
+                <div className="benefits-grid">
+                  {benefits.map((benefit, index) => (
+                    <motion.div
+                      key={benefit}
+                      className="benefit-item"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                    >
+                      <i className="pi pi-check-circle mr-3"></i>
+                      <span className="text-lg">{benefit}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </Card>
           </motion.section>
@@ -159,18 +169,22 @@ export default function MoonCirclesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
-            <Card>
-              <h2>Join Our Next Circle</h2>
-              <p>
-                Ready to experience the magic of Moon Circles? Reserve your
-                space for our next gathering.
-              </p>
-              <Button
-                label="Reserve Your Space"
-                icon="pi pi-calendar"
-                onClick={() => router.push("/contact")}
-                className="p-button-lg"
-              />
+            <Card className="p-4">
+              <div className="p-4 text-center">
+                <h2 className="text-2xl font-semibold mb-4">
+                  Join Our Next Circle
+                </h2>
+                <p className="text-lg mb-6">
+                  Ready to experience the magic of Moon Circles? Reserve your
+                  space for our next gathering.
+                </p>
+                <Button
+                  label="Reserve Your Space"
+                  icon="pi pi-calendar"
+                  onClick={() => router.push("/contact")}
+                  className="p-button-lg"
+                />
+              </div>
             </Card>
           </motion.section>
         </div>

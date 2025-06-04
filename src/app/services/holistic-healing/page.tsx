@@ -43,6 +43,10 @@ export default function HolisticHealingPage() {
     },
   ];
 
+  const description = `
+At Holistic Kas, we embrace a comprehensive approach to healing that addresses the physical, emotional, mental, and spiritual aspects of well-being. Our holistic healing services are designed to support your body's natural healing abilities while promoting balance and harmony in all areas of your life.
+`;
+
   return (
     <main className="service-page">
       <div className="bg-overlay"></div>
@@ -89,18 +93,7 @@ export default function HolisticHealingPage() {
                 <h2 className="text-2xl font-semibold mb-4">
                   About Holistic Healing
                 </h2>
-                <p className="mb-4 text-lg leading-relaxed">
-                  At KD Holistics, we embrace a comprehensive approach to
-                  healing that considers the whole person - body, mind, and
-                  spirit. Our holistic healing practices draw from both ancient
-                  wisdom and modern understanding to support your natural
-                  healing processes.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Through personalized treatment plans, we address the root
-                  causes of health concerns rather than just treating symptoms,
-                  empowering you to achieve optimal wellness naturally.
-                </p>
+                <p className="mb-4 text-lg leading-relaxed">{description}</p>
               </div>
             </Card>
           </motion.section>

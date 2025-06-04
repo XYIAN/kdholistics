@@ -60,14 +60,14 @@ export default function Home() {
           <div className="relative mb-8">
             <Image
               src="/images/hk-icon.png"
-              alt="KD Holistics Icon"
+              alt="Holistic Kas Icon"
               width={200}
               height={200}
               className="hero-image"
               priority
             />
           </div>
-          <h1>KD Holistics</h1>
+          <h1>Holistic Kas</h1>
           <p>Holistic Health & Wellness</p>
           <p>Nurturing Mind, Body, and Spirit</p>
           <Button

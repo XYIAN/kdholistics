@@ -45,14 +45,14 @@ export default function LinksPage() {
           >
             <Image
               src="/images/hk-icon.png"
-              alt="KD Holistics"
+              alt="Holistic Kas"
               width={120}
               height={120}
               className="profile-image"
               priority
             />
           </motion.div>
-          <h1 className={playfair.className}>KD Holistics</h1>
+          <h1 className={playfair.className}>Holistic Kas</h1>
           <p>Connect with Kas across all platforms</p>
         </div>
 

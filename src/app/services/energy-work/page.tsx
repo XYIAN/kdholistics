@@ -44,8 +44,12 @@ export default function EnergyWorkPage() {
     },
   ];
 
+  const description = `
+Energy work at Holistic Kas focuses on restoring and maintaining your body's natural energy flow. Through various modalities including Reiki, chakra balancing, and energy healing, we help clear blockages and promote harmony in your energetic system.
+`;
+
   return (
-    <main className="service-page">
+    <main className="service-page" style={{ background: "transparent" }}>
       <div className="bg-overlay"></div>
       <Image
         src="/images/hk-bg-lg2.png"
@@ -60,6 +64,7 @@ export default function EnergyWorkPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        style={{ background: "transparent" }}
       >
         <div className="service-header">
           <motion.h1
@@ -86,19 +91,9 @@ export default function EnergyWorkPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Card>
-              <h2>About Energy Work</h2>
-              <p>
-                Energy work at KD Holistics focuses on restoring and maintaining
-                your body&apos;s natural energy flow. Through various modalities
-                including Reiki and chakra balancing, we work to remove
-                energetic blockages and promote healing on physical, emotional,
-                and spiritual levels.
-              </p>
-              <p>
-                Each session is tailored to your unique needs, creating a safe
-                and nurturing space for deep healing and transformation.
-              </p>
+            <Card className="p-8 mb-8">
+              <h2 className="text-2xl font-semibold mb-6">About Energy Work</h2>
+              <p className="text-lg leading-relaxed">{description}</p>
             </Card>
           </motion.section>
 
@@ -135,8 +130,8 @@ export default function EnergyWorkPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <Card>
-              <h2>Benefits</h2>
+            <Card className="p-8 mb-8">
+              <h2 className="text-2xl font-semibold mb-6">Benefits</h2>
               <div className="benefits-grid">
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -146,8 +141,8 @@ export default function EnergyWorkPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                   >
-                    <i className="pi pi-check-circle"></i>
-                    <span>{benefit}</span>
+                    <i className="pi pi-check-circle mr-4"></i>
+                    <span className="text-lg">{benefit}</span>
                   </motion.div>
                 ))}
               </div>
