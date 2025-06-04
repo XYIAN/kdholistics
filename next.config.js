@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   images: {
+    unoptimized: true,
     domains: ["github.com"],
     remotePatterns: [
       {
@@ -17,6 +19,8 @@ const nextConfig = {
       },
     ],
   },
+  trailingSlash: true,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

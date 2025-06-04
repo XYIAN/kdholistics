@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Navigation from "@/components/Navigation/Navigation";
 import LoadingScreen from "@/components/common/LoadingScreen";
 import { useLoadingState } from "@/hooks/useLoadingState";
+import { Suspense } from "react";
 
 // PrimeReact imports
 import { PrimeReactProvider } from "primereact/api";
@@ -16,13 +17,16 @@ import "@/styles/globalStyles.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const LoadingWrapper = () => {
+  const isLoading = useLoadingState();
+  return isLoading ? <LoadingScreen /> : null;
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const isLoading = useLoadingState();
-
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -30,8 +34,10 @@ export default function RootLayout({
           <div className="global-background"></div>
           <div className="global-overlay"></div>
           <Navigation />
-          {isLoading && <LoadingScreen />}
-          {children}
+          <Suspense fallback={<LoadingScreen />}>
+            <LoadingWrapper />
+            {children}
+          </Suspense>
         </PrimeReactProvider>
       </body>
     </html>

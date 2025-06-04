@@ -1,65 +1,54 @@
 "use client";
 
-import { EVENTS_LIST } from "@/constants/events";
 import { motion } from "framer-motion";
-import "@/styles/_eventsPage.scss";
-import EventPreviewCard from "./EventpreviewCard";
-import { Card } from "primereact/card";
 import { Event } from "@/types/events";
+import EventPreviewCard from "./EventpreviewCard";
+import "@/styles/_eventsPage.scss";
+import { Suspense } from "react";
 
-const EventsPage = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+interface EventsPageProps {
+  events: Event[];
+}
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
+const EventsPageContent = ({ events }: EventsPageProps) => {
   return (
-    <section className="events-container">
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="flex flex-col items-center"
+    <main className="events-container">
+      <motion.section
+        className="events-header"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <motion.div variants={itemVariants} className="events-header">
-          <h1>Sacred Gatherings & Ceremonies</h1>
-          <p>
-            Join us for transformative experiences that nurture your mind, body,
-            and spirit. Each gathering is thoughtfully crafted to support your
-            personal growth and spiritual journey.
-          </p>
-        </motion.div>
+        <h1>Upcoming Events</h1>
+        <p>Join our transformative gatherings and ceremonies</p>
+      </motion.section>
 
-        <motion.div variants={containerVariants} className="events-grid">
-          {EVENTS_LIST.map((event: Event, index: number) => (
-            <motion.div
-              key={event.eventId}
-              variants={itemVariants}
-              custom={index}
-            >
-              <EventPreviewCard event={event} />
-            </motion.div>
-          ))}
-        </motion.div>
+      <motion.div
+        className="events-grid"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        {events.map((event, index) => (
+          <motion.div
+            key={event.id || index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <EventPreviewCard event={event} />
+          </motion.div>
+        ))}
       </motion.div>
-    </section>
+    </main>
+  );
+};
+
+const EventsPage = ({ events }: EventsPageProps) => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EventsPageContent events={events} />
+    </Suspense>
   );
 };
 

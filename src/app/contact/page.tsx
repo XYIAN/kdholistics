@@ -7,6 +7,7 @@ import "@/styles/_contactPage.scss";
 import { theme } from "@/styles/theme";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
+import { Suspense } from "react";
 
 const contactLinks = [
   {
@@ -53,7 +54,7 @@ const contactLinks = [
   },
 ];
 
-const ContactPage = () => {
+const ContactContent = () => {
   const router = useRouter();
 
   const handleContactClick = (link: string) => {
@@ -149,6 +150,14 @@ const ContactPage = () => {
         ))}
       </motion.section>
     </main>
+  );
+};
+
+const ContactPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContactContent />
+    </Suspense>
   );
 };
 
