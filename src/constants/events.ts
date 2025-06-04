@@ -4,6 +4,7 @@ const CALENDLY_URL = "/contact";
 
 export const EVENTS_LIST: Event[] = [
   {
+    id: 1,
     eventId: "moon-circle-april",
     title: "Full Moon Circle",
     date: "April 23rd, 2024",
@@ -13,6 +14,7 @@ export const EVENTS_LIST: Event[] = [
     link: CALENDLY_URL,
   },
   {
+    id: 2,
     eventId: "sound-healing-may",
     title: "Sound Healing Journey",
     date: "May 15th, 2024",
@@ -22,6 +24,7 @@ export const EVENTS_LIST: Event[] = [
     link: CALENDLY_URL,
   },
   {
+    id: 3,
     eventId: "new-moon-may",
     title: "New Moon Ceremony",
     date: "May 8th, 2024",
@@ -31,6 +34,7 @@ export const EVENTS_LIST: Event[] = [
     link: CALENDLY_URL,
   },
   {
+    id: 4,
     eventId: "womens-circle-june",
     title: "Women's Sacred Circle",
     date: "June 1st, 2024",

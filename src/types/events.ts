@@ -11,7 +11,8 @@ export type EventModel = {
 };
 
 export interface Event {
-  id: number;
+  id?: number;
+  eventId?: string;
   title: string;
   date: string;
   time: string;
