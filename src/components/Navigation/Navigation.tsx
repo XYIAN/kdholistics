@@ -6,7 +6,13 @@ import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
 import { Image } from "primereact/image";
 import { classNames } from "primereact/utils";
+import { Playfair_Display } from "next/font/google";
 import styles from "./Navigation.module.css";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,7 +61,10 @@ const Navigation = () => {
   return (
     <nav className={classNames(styles.nav, { [styles.scrolled]: isScrolled })}>
       <div className={styles.container}>
-        <button onClick={() => handleNavClick("/")} className={styles.logo}>
+        <button
+          onClick={() => handleNavClick("/")}
+          className={classNames(styles.logo, playfair.className)}
+        >
           KD Holistics
         </button>
 
@@ -93,7 +102,7 @@ const Navigation = () => {
           <div className={styles.sidebarHeader}>
             <div className={styles.headerContent}>
               <div
-                className={styles.headerTitle}
+                className={classNames(styles.headerTitle, playfair.className)}
                 onClick={() => handleNavClick("/")}
               >
                 <h1>KD Holistics</h1>

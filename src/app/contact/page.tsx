@@ -6,6 +6,7 @@ import { Button } from "primereact/button";
 import "@/styles/_contactPage.scss";
 import { theme } from "@/styles/theme";
 import Script from "next/script";
+import { useRouter } from "next/navigation";
 
 const contactLinks = [
   {
@@ -53,6 +54,8 @@ const contactLinks = [
 ];
 
 const ContactPage = () => {
+  const router = useRouter();
+
   const handleContactClick = (link: string) => {
     window.open(link, "_blank", "noopener,noreferrer");
   };
@@ -72,6 +75,16 @@ const ContactPage = () => {
           Book your transformative wellness journey with Kas or connect through
           various channels.
         </p>
+        <Button
+          label="View All Social Links"
+          icon="pi pi-share-alt"
+          className="p-button-text"
+          onClick={() => router.push("/links")}
+          style={{
+            color: theme.colors.primary.text,
+            marginTop: theme.spacing.md,
+          }}
+        />
       </motion.section>
 
       <motion.section
