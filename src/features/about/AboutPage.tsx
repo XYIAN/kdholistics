@@ -39,7 +39,15 @@ const AboutPage = () => {
 
   return (
     <main className="about-container">
-      <div className="animated-background"></div>
+      <div className="animated-background">
+        <Image
+          src="/images/hk-bg-lg2.png"
+          alt="Background"
+          fill
+          className="background-image"
+          priority
+        />
+      </div>
 
       <motion.section
         className="about-hero"

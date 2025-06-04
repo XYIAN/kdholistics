@@ -4,7 +4,7 @@ import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { motion } from "framer-motion";
 import { Event } from "@/types/events";
-import { theme, commonStyles } from "@/styles/theme";
+import { theme } from "@/styles/theme";
 
 interface EventPreviewCardProps {
   event: Event;
@@ -17,10 +17,13 @@ const EventPreviewCard = ({ event }: EventPreviewCardProps) => {
 
   return (
     <Card
-      className="event-card-inner"
+      className="event-card"
+      pt={{
+        root: { className: "event-card-root" },
+        content: { className: "event-content" },
+      }}
       style={{
-        ...commonStyles.cardBase,
-        padding: theme.components.card.padding.default,
+        background: "transparent",
       }}
     >
       <motion.div
@@ -30,54 +33,19 @@ const EventPreviewCard = ({ event }: EventPreviewCardProps) => {
         className="h-full flex flex-col"
       >
         <div className="flex-grow">
-          <div
-            className="event-date-badge"
-            style={{
-              background: theme.colors.gradients.button,
-              borderRadius: theme.borderRadius.md,
-              padding: theme.spacing.xs + " " + theme.spacing.md,
-              gap: theme.spacing.xs,
-            }}
-          >
+          <div className="event-date">
             <i className="pi pi-calendar"></i>
             <span>{event.date}</span>
           </div>
 
-          <h3
-            className="text-2xl font-semibold mb-4"
-            style={{
-              color: theme.colors.primary.text,
-              marginBottom: theme.spacing.md,
-              fontSize: theme.typography.fontSizes.md,
-              fontWeight: theme.typography.fontWeights.semibold,
-            }}
-          >
-            {event.title}
-          </h3>
+          <h2>{event.title}</h2>
 
-          <div
-            className="event-time"
-            style={{
-              color: theme.colors.primary.text,
-              fontSize: theme.typography.fontSizes.xs,
-              gap: theme.spacing.xs,
-              marginBottom: theme.spacing.md,
-            }}
-          >
+          <div className="event-time">
             <i className="pi pi-clock"></i>
             <span>{event.time}</span>
           </div>
 
-          <p
-            className="mb-6 leading-relaxed"
-            style={{
-              color: theme.colors.primary.textDark,
-              marginBottom: theme.spacing.xl,
-              lineHeight: theme.typography.lineHeights.relaxed,
-            }}
-          >
-            {event.description}
-          </p>
+          <p>{event.description}</p>
         </div>
 
         <div className="flex justify-center mt-4">
@@ -86,21 +54,17 @@ const EventPreviewCard = ({ event }: EventPreviewCardProps) => {
             icon="pi pi-calendar-plus"
             className="schedule-button"
             style={{
-              ...commonStyles.buttonBase,
+              background: theme.colors.gradients.button,
+              border: "none",
+              padding: `${theme.spacing.sm} ${theme.spacing.lg}`,
+              borderRadius: theme.borderRadius.md,
+              color: theme.colors.primary.text,
+              fontSize: theme.typography.fontSizes.sm,
+              transition: "all 0.3s ease",
             }}
             onClick={handleSchedule}
           />
         </div>
-
-        <div
-          className="sparkle-overlay"
-          style={{
-            backgroundImage: `radial-gradient(circle, ${theme.colors.effects.sparkleLight} 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-            opacity: 0.3,
-            mixBlendMode: "overlay",
-          }}
-        />
       </motion.div>
     </Card>
   );

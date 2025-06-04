@@ -5,6 +5,7 @@ import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { useRouter } from "next/navigation";
 import { theme } from "@/styles/theme";
+import "@/styles/_servicesPage.scss";
 
 const services = [
   {
@@ -38,7 +39,9 @@ export default function ServicesPage() {
   const router = useRouter();
 
   return (
-    <>
+    <main className="services-container">
+      <div className="animated-background"></div>
+
       <motion.section
         className="services-hero"
         initial={{ opacity: 0, y: 20 }}
@@ -68,16 +71,16 @@ export default function ServicesPage() {
                 label="Learn More"
                 text
                 className="mt-3"
-                onClick={() => router.push(`/services/${service.path}`)}
                 style={{
                   color: theme.colors.primary.text,
                   fontSize: theme.typography.fontSizes.sm,
                 }}
+                onClick={() => router.push(`/services/${service.path}`)}
               />
             </Card>
           </motion.div>
         ))}
       </section>
-    </>
+    </main>
   );
 }

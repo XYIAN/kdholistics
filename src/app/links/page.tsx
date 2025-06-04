@@ -24,7 +24,7 @@ export default function LinksPage() {
     <main className="links-container">
       <div className="bg-overlay"></div>
       <Image
-        src="/images/hk-bg-lg.png"
+        src="/images/hk-bg-lg2.png"
         alt="Background"
         fill
         className="background-image"

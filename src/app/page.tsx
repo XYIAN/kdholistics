@@ -12,6 +12,7 @@ import "@/styles/_homePage.scss";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { theme, commonStyles } from "@/styles/theme";
+import styles from "./page.module.css";
 
 export default function Home() {
   const router = useRouter();
@@ -37,7 +38,7 @@ export default function Home() {
       title: "Moon Circles",
       description: "Sacred gatherings for spiritual growth and connection",
       icon: "pi pi-moon",
-      path: "mooncircles",
+      path: "moon-circles",
     },
     {
       title: "Wellness Coaching",
@@ -48,10 +49,10 @@ export default function Home() {
   ];
 
   return (
-    <main className="home-container">
-      <section className="hero-section">
+    <main className={styles.main}>
+      <section className={styles.hero}>
         <motion.div
-          className="hero-content"
+          className={styles.heroContent}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -83,18 +84,26 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="services-section">
+      <section className={styles.services}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className={styles.sectionContent}
         >
           <h2>Our Services</h2>
-          <div className="service-grid">
+          <div className={styles.serviceGrid}>
             {services.map((service, index) => (
-              <Card key={index} className="service-card">
-                <div className="service-icon">
+              <Card
+                key={index}
+                className={styles.serviceCard}
+                pt={{
+                  root: { className: styles.cardRoot },
+                  content: { className: styles.cardContent },
+                }}
+              >
+                <div className={styles.serviceIcon}>
                   <i className={service.icon}></i>
                 </div>
                 <h3>{service.title}</h3>
@@ -115,12 +124,13 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="about-section">
+      <section className={styles.about}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className={styles.sectionContent}
         >
           <h2>About Us</h2>
           <p>
@@ -143,12 +153,13 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="contact-section">
+      <section className={styles.contact}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className={styles.sectionContent}
         >
           <h2>Connect with Kas</h2>
           <p>Begin your wellness journey today</p>

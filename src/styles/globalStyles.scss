@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.global-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/hk-bg-lg2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: 0;
+}
+
+.global-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--gradient-primary);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .global-background {
+    background-attachment: scroll;
+  }
+}
